@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- The TV's info endpoint (port 8001) is plain HTTP on a LAN address that is not known in advance. -->
+    <base-config cleartextTrafficPermitted="true" />
+</network-security-config>
