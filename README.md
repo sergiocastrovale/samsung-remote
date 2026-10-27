@@ -55,12 +55,26 @@ extra tap fixes it.
 
 ## Install
 
-There is no Play Store release. Build the APK yourself (below) and install it:
+There is no Play Store release. Download the APK from the
+[latest release](https://github.com/sergiocastrovale/samsung-remote/releases/latest), or build it
+yourself (below).
 
-- **USB**: enable *Developer options > USB debugging* on the phone, then
-  `adb install -r app/build/outputs/apk/release/app-release.apk`
-- **Without a cable**: copy the APK to the phone, open it and allow "Install unknown apps" for the
-  app you opened it with.
+- **On the phone**: open the downloaded APK and allow "Install unknown apps" for the browser or file
+  manager you opened it with.
+- **USB**: enable *Developer options > USB debugging* on the phone, then `adb install -r samsung-remote-<version>.apk`
+
+Release APKs are signed with this certificate (SHA-256), so you can check the download:
+
+```
+8e:c7:ef:e5:1c:53:dd:f4:b2:90:9c:8c:56:44:af:b3:7c:1a:89:d0:38:8c:ff:b2:f7:e0:34:88:17:10:b9:cc
+```
+
+```bash
+apksigner verify --print-certs samsung-remote-<version>.apk
+```
+
+A build you make yourself is signed with a different key. Android won't install it over the
+release APK (or the other way round): uninstall first, then press Allow on the TV again.
 
 ## Build
 
